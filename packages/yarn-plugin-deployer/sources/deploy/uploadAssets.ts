@@ -28,6 +28,7 @@ export async function uploadAssets({ workspace, aws, report, serviceName, releas
       report.reportInfo(null, `asset uploaded: ${file} (s3://${serviceName}/${key})`);
     } catch (e) {
       report.reportError(MessageName.EXCEPTION, `aws upload error: ${(e as Error)?.message}`);
+      throw e;
     }
   }
 }
