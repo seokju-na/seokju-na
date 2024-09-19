@@ -26,11 +26,6 @@ export default defineConfig({
         mode: 'link',
         content: 'https://github.com/seokju-na',
       },
-      {
-        icon: 'x',
-        mode: 'link',
-        content: 'https://x.com/seokjume',
-      },
     ],
     enableScrollToTop: true,
   },
