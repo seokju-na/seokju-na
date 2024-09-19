@@ -1,0 +1,25 @@
+name: ci
+on: pull_request
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/node-setup
+      - uses: ./.github/actions/yarn-setup
+      - run: yarn workspaces foreach -pAt run check
+      - run: yarn workspaces foreach -pAt run typecheck
+  test:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/node-setup
+      - uses: ./.github/actions/yarn-setup
+      - run: yarn workspaces foreach -pAt run test
+        env:
+          NODE_ENV: test
