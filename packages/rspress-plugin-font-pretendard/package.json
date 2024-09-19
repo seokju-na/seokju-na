@@ -1,5 +1,5 @@
 {
-  "name": "rspress-plugin-font-pretendard",
+  "name": "@seokju-na/rspress-plugin-font-pretendard",
   "private": true,
   "main": "./src/index.ts",
   "module": "./src/index.ts",

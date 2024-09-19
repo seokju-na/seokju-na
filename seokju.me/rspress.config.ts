@@ -1,4 +1,4 @@
-import { pluginFontPretendard } from 'rspress-plugin-font-pretendard';
+import { pluginFontPretendard } from '@seokju-na/rspress-plugin-font-pretendard';
 import rspressPluginGoogleAnalytics from 'rspress-plugin-google-analytics';
 import { defineConfig } from 'rspress/config';
 

@@ -5,16 +5,17 @@
     "dev": "rspress dev",
     "build": "rspress build",
     "preview": "rspress preview",
-    "deploy": "yarn deployer deploy"
+    "deploy": "seokju-na deploy"
   },
   "dependencies": {
+    "@seokju-na/rspress-plugin-font-pretendard": "workspace:^",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "rspress-plugin-font-pretendard": "workspace:^",
     "rspress-plugin-google-analytics": "0.3.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.1",
+    "@seokju-na/cli": "workspace:^",
     "@types/node": "22.5.4",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
