@@ -1,0 +1,16 @@
+name: cd
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip cd]')"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: ./.github/actions/node-setup
+      - uses: ./.github/actions/yarn-setup
+      - run: yarn workspaces foreach -p --include="seokju.me" --since=$(git rev-parse HEAD~1) run deploy
