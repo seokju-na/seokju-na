@@ -14,3 +14,6 @@ jobs:
       - uses: ./.github/actions/node-setup
       - uses: ./.github/actions/yarn-setup
       - run: yarn workspaces foreach -p --include="seokju.me" --since=$(git rev-parse HEAD~1) run deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
