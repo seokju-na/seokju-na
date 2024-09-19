@@ -10,16 +10,12 @@ runs:
     - id: yarn-cache-dir
       run: echo "YARN_CACHE_DIR=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
       shell: bash
-    - id: yarn-cache
-      uses: actions/cache@v4
+    - uses: actions/cache@v4
       with:
         path: ${{ steps.yarn-cache-dir.outputs.YARN_CACHE_DIR }}
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
         save-always: true
-    - run: |
-        CACHE_HIT="${{ steps.yarn-cache.outputs.cache-hit }}"
-        NODE_MODULES_EXISTS=$(test -d "node_modules" && echo "true" || echo "false")
-        if [[ "$CACHE_HIT" != 'true' || "$NODE_MODULES_EXISTS" == 'false' ]]; then
-          yarn install
-        fi
+    - run: yarn install
       shell: bash
