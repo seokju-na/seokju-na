@@ -1,0 +1,6 @@
+body {
+  --rp-font-family-base:
+    "Pretendard Variable", Pretendard, "Inter var experimental", "Inter var",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}

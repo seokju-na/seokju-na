@@ -1,0 +1,25 @@
+{
+  "name": "seokju.me",
+  "private": true,
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview",
+    "deploy": "yarn deployer deploy"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "rspress-plugin-font-pretendard": "workspace:^",
+    "rspress-plugin-google-analytics": "0.3.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.1",
+    "@types/node": "22.5.4",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "rspress": "1.31.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.2"
+  }
+}
