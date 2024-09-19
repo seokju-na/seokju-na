@@ -1,4 +1,13 @@
 {
-  "name": "seokju-na",
-  "packageManager": "yarn@4.4.1"
+  "name": "seokju-na-sources",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "seokju.me"
+  ],
+  "packageManager": "yarn@4.5.0",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.1",
+    "typescript": "5.6.2"
+  }
 }
