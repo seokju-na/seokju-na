@@ -37,7 +37,7 @@ export class DeployCommand extends Command {
     await runBuild(context);
     for await (const result of uploadAssets(context)) {
       this.context.stdout.write(
-        `upload asset ${result.success ? 'succeed' : 'failed'}: ${result.s3Path} ${result.error != null ? `(${(result.error as Error)?.message})` : ''}`
+        `upload asset ${result.success ? 'succeed' : 'failed'}: ${result.s3Path} ${result.error != null ? `(${(result.error as Error)?.message})` : ''}\n`
       );
       if (!result.success) {
         hasError = true;
