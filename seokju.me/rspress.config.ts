@@ -8,15 +8,45 @@ export default defineConfig({
   root: 'articles',
   outDir: './dist',
   title: 'seokju.me',
-  lang: 'ko',
+  lang: 'en',
   ssg: {
     strict: true,
   },
+  locales: [
+    {
+      lang: 'en',
+      label: 'English',
+      title: 'seokju.me',
+      description: `Seokju Na's personal blog`,
+    },
+    {
+      lang: 'ko',
+      label: '한국어',
+      title: 'seokju.me',
+      description: '나석주 블로그',
+    },
+  ],
   themeConfig: {
-    nav: [
+    locales: [
       {
-        text: '소개',
-        link: '/',
+        lang: 'en',
+        label: 'English',
+        nav: [
+          {
+            text: 'Intro',
+            link: '/',
+          },
+        ],
+      },
+      {
+        lang: 'ko',
+        label: '한국어',
+        nav: [
+          {
+            text: '소개',
+            link: '/ko',
+          },
+        ],
       },
     ],
     search: false,
@@ -37,7 +67,8 @@ export default defineConfig({
   ],
   builderConfig: {
     output: {
-      assetPrefix: RELEASE_ID != null ? `https://seokju.me/${RELEASE_ID}/` : undefined,
+      assetPrefix:
+        RELEASE_ID != null ? `https://seokju.me/${RELEASE_ID}/` : undefined,
     },
   },
 });
