@@ -45,6 +45,12 @@ export default defineConfig({
           {
             text: '소개',
             link: '/ko',
+            activeMatch: '^/ko$|^/ko.index.html$',
+          },
+          {
+            text: '글',
+            link: '/ko/notes',
+            activeMatch: '^/ko/notes$|^/ko/notes.html$',
           },
         ],
       },
