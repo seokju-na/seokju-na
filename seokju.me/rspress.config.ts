@@ -35,6 +35,12 @@ export default defineConfig({
           {
             text: 'Intro',
             link: '/',
+            activeMatch: '^/$|^/index.html$',
+          },
+          {
+            text: 'Posts',
+            link: '/posts',
+            activeMatch: '^/posts$|^/posts.html$|^/posts/index.html$',
           },
         ],
       },
@@ -45,12 +51,12 @@ export default defineConfig({
           {
             text: '소개',
             link: '/ko',
-            activeMatch: '^/ko$|^/ko.index.html$',
+            activeMatch: '^/ko$|^/ko/index.html$',
           },
           {
             text: '글',
-            link: '/ko/notes',
-            activeMatch: '^/ko/notes$|^/ko/notes.html$',
+            link: '/ko/posts',
+            activeMatch: '^/ko/posts|^/ko/posts/index.html$|^/ko/posts.html$',
           },
         ],
       },
